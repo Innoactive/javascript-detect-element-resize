@@ -29,15 +29,12 @@
 				expand = triggers.firstElementChild,
 				contract = triggers.lastElementChild,
 				expandChild = expand.firstElementChild;
-			//Asynchronously update from DOM to reduce layout thrashing
-			requestFrame(function() {
-				contract.scrollLeft = contract.scrollWidth;
-				contract.scrollTop = contract.scrollHeight;
-				expandChild.style.width = expand.offsetWidth + 1 + 'px';
-				expandChild.style.height = expand.offsetHeight + 1 + 'px';
-				expand.scrollLeft = expand.scrollWidth;
-				expand.scrollTop = expand.scrollHeight;
-			});
+			contract.scrollLeft = contract.scrollWidth;
+			contract.scrollTop = contract.scrollHeight;
+			expandChild.style.width = expand.offsetWidth + 1 + 'px';
+			expandChild.style.height = expand.offsetHeight + 1 + 'px';
+			expand.scrollLeft = expand.scrollWidth;
+			expand.scrollTop = expand.scrollHeight;
 		};
 
 		function checkTriggers(element){
